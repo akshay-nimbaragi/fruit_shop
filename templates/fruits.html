@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="container section">
+	<h2>Our Fruits</h2>
+	<div class="fruits-grid">
+		{% for fruit in fruits %}
+		<article class="fruit-card">
+			<img src="{{ url_for('static', filename='images/' + fruit.image) }}" alt="{{ fruit.name }}">
+			<h3>{{ fruit.name }}</h3>
+			<p class="price">₹{{ fruit.price }}</p>
+			<a href="/order?fruit={{ fruit.id }}" class="btn btn-secondary">Order Now</a>
+		</article>
+		{% endfor %}
+	</div>
+</section>
+{% endblock %}

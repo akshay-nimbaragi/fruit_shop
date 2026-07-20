@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+{% block content %}
+<section class="hero hero-center">
+	<div class="container hero-grid">
+		<div class="hero-copy centered">
+			<!-- sliding heading with emphasis -->
+			<h2 class="slide-in" data-anim="delay-0">Healthy <span class="highlight">fruits</span> at affordable prices</h2>
+			<p class="lead animate-on-scroll" data-anim="delay-1">Fresh Fruit Basket brings you fresh, seasonal fruits that nourish your body and delight your taste buds.</p>
+
+			<!-- animated CTA -->
+			<div class="hero-actions">
+				<a href="/fruits" class="btn btn-primary btn-animated" aria-label="View fruits">View Fruits</a>
+				<!-- subtle micro-cta -->
+				<a href="/contact" class="btn btn-secondary micro" aria-label="Contact us">Contact</a>
+			</div>
+
+			<!-- animated stats as centered pills -->
+			<div class="stats">
+				<div class="stat-item animate-on-scroll" data-anim="delay-2"><strong>5</strong> Fresh varieties</div>
+				<div class="stat-item animate-on-scroll" data-anim="delay-3"><strong>100%</strong> Natural</div>
+				<div class="stat-item animate-on-scroll" data-anim="delay-4"><strong>Fast</strong> Local Delivery</div>
+			</div>
+		</div>
+
+		<!-- removed hero-media image for a cleaner, centered hero -->
+	</div>
+
+	<!-- decorative floating banner text -->
+	<div class="floating-banner animate-on-scroll" data-anim="delay-5">Fresh • Natural • Affordable</div>
+
+	<!-- small scroll indicator -->
+	<div class="scroll-indicator" aria-hidden="true">
+		<span class="dot"></span>
+		<span class="label">Scroll</span>
+	</div>
+</section>
+
+<section class="why container">
+	<h3 class="animate-on-scroll" data-anim="delay-6">Why fruits are healthy</h3>
+	<div class="why-grid">
+		<!-- Vitamins & Minerals -->
+		<div class="card why-card vitamins animate-on-scroll" data-anim="delay-7">
+			<div class="icon" aria-hidden="true">
+				<!-- shield + cross vitamin icon -->
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<path d="M12 2l7 4v5c0 5-3.5 9-7 11-3.5-2-7-6-7-11V6l7-4z" fill="url(#g1)"/>
+					<path d="M12 8v8M8 12h8" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+					<defs><linearGradient id="g1" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#70e08a"/><stop offset="1" stop-color="#2e8b57"/></linearGradient></defs>
+				</svg>
+			</div>
+			<h4>Vitamins & Minerals</h4>
+			<p>Fruits provide essential vitamins that support immunity and vitality.</p>
+			<span class="chip">Immunity Boost</span>
+		</div>
+
+		<!-- Dietary Fiber -->
+		<div class="card why-card fiber animate-on-scroll" data-anim="delay-8">
+			<div class="icon" aria-hidden="true">
+				<!-- fiber / leaf icon -->
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<path d="M3 21c6-8 12-10 18-12-2 6-5 10-6 12-4 0-9 0-12 0z" fill="url(#g2)"/>
+					<defs><linearGradient id="g2" x1="0" x2="1"><stop offset="0" stop-color="#ffd166"/><stop offset="1" stop-color="#ff9f1c"/></linearGradient></defs>
+				</svg>
+			</div>
+			<h4>Dietary Fiber</h4>
+			<p>Natural fiber aids digestion and keeps you full for longer.</p>
+			<span class="chip">Gut Health</span>
+		</div>
+
+		<!-- Natural Energy -->
+		<div class="card why-card energy animate-on-scroll" data-anim="delay-9">
+			<div class="icon" aria-hidden="true">
+				<!-- energy / sun icon -->
+				<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+					<circle cx="12" cy="12" r="5" fill="url(#g3)"/>
+					<path d="M12 1v3M12 20v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M1 12h3M20 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="#fff" stroke-width="1.2" stroke-linecap="round"/>
+					<defs><linearGradient id="g3" x1="0" x2="1"><stop offset="0" stop-color="#ffaf7b"/><stop offset="1" stop-color="#ff6b6b"/></linearGradient></defs>
+				</svg>
+			</div>
+			<h4>Natural Energy</h4>
+			<p>Healthy natural sugars and antioxidants for sustained energy.</p>
+			<span class="chip">Natural Boost</span>
+		</div>
+	</div>
+</section>
+{% endblock %}

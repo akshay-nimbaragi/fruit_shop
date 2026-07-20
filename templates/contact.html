@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- page stylesheet -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/contact.css') }}">
+
+<section class="container section contact-section">
+	<h2 class="page-title">Contact Us</h2>
+	<h3 class="page-subtitle">Give your feedback</h3>
+
+	{% if success %}
+	<div class="alert success" id="serverSuccess">Thanks! Your feedback has been sent.</div>
+	{% elif error %}
+	<div class="alert error" id="serverError">{{ error }}</div>
+	{% endif %}
+
+	<div class="contact-grid">
+		<div class="contact-info">
+			<h3>Get in touch</h3>
+			<p><strong>Phone:</strong> +91-7975004993</p>
+			<p><strong>Email:</strong> codingwithak6@gmail.com</p>
+			<p><strong>Location:</strong> Mj infrastructure, manipal county road begur, Banglore, Karnataka, India</p>
+			<p class="note">Prefer to keep it short — tell us what we can improve.</p>
+		</div>
+		<form id="contactForm" class="contact-form" method="post" action="/contact" onsubmit="return contactSubmitted(event)">
+			<label>
+				<span>Your Name</span>
+				<input type="text" id="cname" name="name" required>
+			</label>
+			<label>
+				<span>Your Email</span>
+				<input type="email" id="cemail" name="email" required>
+			</label>
+			<label class="full">
+				<span>Message</span>
+				<textarea id="cmessage" name="message" rows="4" required></textarea>
+			</label>
+			<div class="form-actions">
+				<button type="submit" class="btn btn-secondary" id="sendBtn">Send Message</button>
+				<div class="form-status" id="formStatus" aria-live="polite"></div>
+			</div>
+		</form>
+	</div>
+</section>
+
+<!-- page script -->
+<script src="{{ url_for('static', filename='js/contact.js') }}"></script>
+{% endblock %}

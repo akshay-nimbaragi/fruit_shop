@@ -1,0 +1,276 @@
+/* Simple reset and variables */
+:root{
+	--green:#2e8b57;
+	--light:#f6fff9;
+	--muted:#6b6b6b;
+	--card:#ffffff;
+	--accent:#3cb371;
+	--max-width:1100px;
+	font-size:16px;
+}
+*{box-sizing:border-box}
+body{
+	font-family:Inter, system-ui, Arial, sans-serif;
+	margin:0;
+	color:#222;
+	background:linear-gradient(180deg, #f8fff9 0%, #ffffff 100%);
+}
+
+/* Container */
+.container{
+	max-width:var(--max-width);
+	margin:0 auto;
+	padding:1rem;
+}
+
+/* Header */
+.site-header{
+	background:rgba(46,139,87,0.06);
+	border-bottom:1px solid #e7f5ef;
+}
+.header-inner{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+}
+.brand{display:flex;align-items:center;gap:0.75rem;text-decoration:none;color:inherit}
+.logo{width:64px;height:64px}
+.brand h1{margin:0;font-size:1.15rem}
+.tagline{margin:0;color:var(--muted);font-size:0.9rem}
+
+.main-nav a{
+	margin-left:0.75rem;
+	color:var(--green);
+	text-decoration:none;
+	padding:0.45rem 0.6rem;
+	border-radius:6px;
+	transition:all .2s;
+}
+.main-nav a:hover{background:var(--accent);color:white;transform:translateY(-2px)}
+
+/* Hero */
+.hero{padding:2rem 0;position:relative;overflow:visible}
+.hero-grid{display:grid;grid-template-columns:1fr 420px;gap:2rem;align-items:center}
+.hero-copy h2{font-size:1.7rem;margin:0 0 .5rem}
+.lead{color:var(--muted)}
+.btn{display:inline-block;padding:0.6rem 1rem;border-radius:8px;border:0;cursor:pointer;text-decoration:none}
+.btn-primary{background:var(--green);color:white;box-shadow:0 6px 18px rgba(46,139,87,0.12);transition:transform .18s}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-secondary{background:white;color:var(--green);border:1px solid var(--green)}
+.stats{display:flex;gap:1rem;margin-top:1rem;color:var(--muted)}
+
+/* Why section */
+.why{padding:1.25rem 0}
+.why-grid{ display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:1rem; margin-top:1rem; align-items:stretch; }
+.card{background:var(--card);padding:1rem;border-radius:10px;box-shadow:0 6px 14px rgba(0,0,0,0.03);transition:transform .18s}
+.card:hover{transform:translateY(-6px)}
+
+/* Enhanced 'Why fruits are healthy' styles */
+.why-card{ position:relative; overflow:hidden; padding:1.2rem; border-radius:14px; color: #114b2b; box-shadow:0 10px 22px rgba(7,30,15,0.04); transition: transform .35s cubic-bezier(.16,.8,.3,1), box-shadow .3s, filter .3s; display:flex; flex-direction:column; gap:.6rem; min-height:170px; }
+.why-card:hover{ transform: translateY(-8px) scale(1.01); filter:brightness(1.02); }
+
+/* Icon bubble */
+.why-card .icon{ width:64px; height:64px; border-radius:12px; display:flex; align-items:center; justify-content:center; box-shadow:0 8px 18px rgba(0,0,0,0.06); margin-bottom:.4rem; transition: transform .36s; }
+.why-card .icon svg{ width:40px; height:40px; display:block; }
+
+/* small tag */
+.chip{ display:inline-block; margin-top:auto; padding:.25rem .5rem; border-radius:999px; font-size:.82rem; background:rgba(255,255,255,0.75); color:var(--green); font-weight:600; border:1px solid rgba(46,139,87,0.08); }
+
+/* Theme variants */
+.why-card.vitamins { background: linear-gradient(135deg, rgba(112,224,138,0.07), rgba(46,139,87,0.03)); }
+.why-card.vitamins .icon{ background: linear-gradient(135deg,#70e08a,#2e8b57); color:white; }
+
+.why-card.fiber { background: linear-gradient(135deg, rgba(255,209,102,0.06), rgba(255,159,28,0.02)); }
+.why-card.fiber .icon{ background: linear-gradient(135deg,#ffd166,#ff9f1c); color:white; }
+
+.why-card.energy { background: linear-gradient(135deg, rgba(255,175,123,0.06), rgba(255,107,107,0.02)); }
+.why-card.energy .icon{ background: linear-gradient(135deg,#ffaf7b,#ff6b6b); color:white; }
+
+/* animate-in: slight pop for icon when card becomes visible */
+.why-card.in-view { transform: translateY(0); }
+.why-card.in-view .icon{ transform: scale(1.06); transition-duration:.45s; }
+
+/* accessible high-contrast fallback */
+@media (prefers-contrast: more) {
+	.why-card { box-shadow:none; border:1px solid rgba(0,0,0,0.06) }
+}
+
+/* responsive tweaks */
+@media (max-width:700px){
+	.why-grid{ grid-template-columns:1fr; }
+	.why-card{ min-height:150px; padding:1rem; }
+	.why-card .icon{ width:56px; height:56px; }
+}
+
+/* Fruits grid */
+.section{padding:2rem 0}
+.fruits-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:1rem}
+.fruit-card{background:var(--card);padding:1rem;border-radius:12px;text-align:center;box-shadow:0 8px 20px rgba(0,0,0,0.04);transition:transform .18s}
+.fruit-card img{width:100px;height:100px;margin-bottom:.5rem}
+.fruit-card h3{margin:0}
+.fruit-card .price{color:var(--green);font-weight:600;margin:0.4rem 0}
+.fruit-card:hover{transform:translateY(-8px)}
+
+/* Forms */
+.form-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:0.75rem}
+label{display:flex;flex-direction:column;color:var(--muted)}
+label.full{grid-column:1/-1}
+input,textarea,select{padding:0.6rem;border-radius:8px;border:1px solid #e6e6e6}
+.form-actions{display:flex;justify-content:flex-end;align-items:center;padding-top:0.5rem}
+.form-actions.full{grid-column:1/-1}
+
+/* Contact layout */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;align-items:start}
+
+/* Alert */
+.alert{padding:0.8rem;border-radius:8px;margin-bottom:1rem}
+.alert.success{background:#e9fbe9;border:1px solid #c3f0cc;color:#2a7b3a}
+
+/* Footer */
+.site-footer{background:#f6fff9;padding:1rem 0;border-top:1px solid #e7f5ef;margin-top:2rem}
+.site-footer p{margin:0;text-align:center;color:var(--muted);font-size:0.95rem}
+.site-footer .small{margin-top:.4rem;font-size:0.85rem}
+
+/* Hero animations & decorations */
+.hero { position: relative; overflow: visible; }
+.hero-copy { z-index: 2; position: relative; }
+
+/* slide-in heading */
+.slide-in { transform: translateY(12px); opacity: 0; transition: all .7s cubic-bezier(.16,.8,.3,1); }
+.slide-in.in-view { transform: translateY(0); opacity: 1; }
+
+/* highlight in heading */
+.highlight { color: var(--accent); background: linear-gradient(90deg, rgba(60,179,113,0.12), rgba(46,139,87,0.06)); padding: .1rem .4rem; border-radius: 6px; }
+
+/* CTA animation */
+.btn-animated { position: relative; transition: transform .18s ease, box-shadow .18s; }
+.btn-animated:hover { transform: translateY(-6px) rotate(-0.6deg); box-shadow: 0 12px 28px rgba(46,139,87,0.12); }
+
+/* floating fruits */
+.hero-decor { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.hero-decor .fruit { position: absolute; display:block; width:64px; height:64px; opacity: .95; transition: transform .2s ease; }
+.hero-decor .fruit img{width:100%;height:100%}
+
+/* custom positions */
+.hero-decor .f1 { left: -10px; top: 10%; animation: floatY 6s ease-in-out infinite; transform-origin:center; }
+.hero-decor .f2 { right: -14px; top: 30%; animation: floatY 7s ease-in-out infinite .6s; transform-origin:center; }
+.hero-decor .f3 { left: 40%; bottom: -6%; animation: floatY 5.5s ease-in-out infinite .3s; transform-origin:center; }
+
+/* floating banner */
+.floating-banner { position:absolute; right:2rem; top:1.2rem; background:rgba(255,255,255,0.95); color:var(--green); padding:.45rem .9rem; border-radius:999px; font-weight:600; box-shadow:0 6px 18px rgba(46,139,87,0.06); opacity:0; transform: translateY(-6px) scale(.98); transition:all .6s .2s cubic-bezier(.16,.8,.3,1); }
+.floating-banner.in-view { opacity:1; transform: translateY(0) scale(1); }
+
+/* scroll indicator */
+.scroll-indicator { position:absolute; left:50%; transform:translateX(-50%); bottom:0.6rem; display:flex; flex-direction:column; align-items:center; gap:.25rem; color:var(--muted); }
+.scroll-indicator .dot { width:8px; height:8px; background:var(--green); border-radius:999px; animation: bounce 1.6s infinite; opacity:.95; }
+
+/* stats and staggered animations */
+.stat-item { opacity:0; transform: translateY(8px); transition: all .55s cubic-bezier(.16,.8,.3,1); }
+.stat-item.in-view { opacity:1; transform: translateY(0); }
+
+/* general animate-on-scroll helper */
+.animate-on-scroll { opacity:0; transform: translateY(10px); transition: opacity .55s ease, transform .55s ease; }
+.animate-on-scroll.in-view { opacity:1; transform: translateY(0); }
+
+/* Centered hero layout and decorative background */
+.hero.hero-center{
+	min-height:72vh;
+	display:flex;
+	align-items:center;
+	position:relative;
+	background:
+		radial-gradient(circle at 12% 20%, rgba(46,139,87,0.06), transparent 12%),
+		radial-gradient(circle at 88% 80%, rgba(123,201,111,0.03), transparent 12%);
+	overflow:visible;
+}
+
+/* ensure the grid centers content */
+.hero.hero-center .hero-grid{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	gap:1.5rem;
+}
+
+/* center copy and tighten layout for middle-of-page look */
+.hero-copy.centered{
+	max-width:820px;
+	margin:auto;
+	text-align:center;
+	padding:2rem 1rem;
+}
+
+/* emphasized heading underline that animates in view */
+.slide-in{
+	position:relative;
+}
+.slide-in::after{
+	content:"";
+	display:block;
+	width:84px;
+	height:7px;
+	margin:12px auto 0;
+	border-radius:999px;
+	background:linear-gradient(90deg,var(--accent),var(--green));
+	opacity:0.95;
+	transform: translateY(8px) scale(.98);
+	transition: transform .45s cubic-bezier(.16,.8,.3,1), opacity .45s;
+}
+.slide-in.in-view::after{ transform: translateY(0) scale(1); opacity:1; }
+
+/* centered, pill-style stats with hover lifts */
+.stats{
+	display:flex;
+	justify-content:center;
+	gap:0.9rem;
+	flex-wrap:wrap;
+	margin-top:1.25rem;
+}
+.stat-item{
+	background: rgba(46,139,87,0.06);
+	color:var(--green);
+	padding:.45rem .8rem;
+	border-radius:14px;
+	font-weight:700;
+	box-shadow:0 6px 16px rgba(46,139,87,0.04);
+	transition: transform .18s ease, box-shadow .18s ease, filter .18s;
+}
+.stat-item:hover{ transform: translateY(-6px); box-shadow:0 14px 30px rgba(46,139,87,0.08); filter:brightness(1.02); }
+
+/* improved hero CTA micro animation (centered) */
+.hero-actions{ display:flex; justify-content:center; gap:0.6rem; margin-top:0.9rem; }
+
+/* Why cards hover & icon motion (stronger interaction) */
+.why-card{ transition: transform .35s cubic-bezier(.16,.8,.3,1), box-shadow .35s; }
+.why-card:hover{ transform: translateY(-10px) scale(1.02) rotate(-0.6deg); box-shadow:0 18px 40px rgba(7,30,15,0.08); }
+.why-card .icon{ transition: transform .45s cubic-bezier(.16,.8,.3,1), box-shadow .35s; }
+.why-card:hover .icon{ transform: rotate(-8deg) scale(1.12); box-shadow:0 16px 36px rgba(0,0,0,0.10); }
+
+/* chip micro-interaction */
+.chip{ transition: transform .25s, box-shadow .25s; }
+.why-card:hover .chip{ transform: translateY(-4px); box-shadow:0 10px 24px rgba(0,0,0,0.06); }
+
+/* delays (simple utilities) */
+[data-anim="delay-0"]{ transition-delay:0s }
+[data-anim="delay-1"]{ transition-delay:.08s }
+[data-anim="delay-2"]{ transition-delay:.16s }
+[data-anim="delay-3"]{ transition-delay:.24s }
+[data-anim="delay-4"]{ transition-delay:.32s }
+[data-anim="delay-5"]{ transition-delay:.4s }
+[data-anim="delay-6"]{ transition-delay:.48s }
+[data-anim="delay-7"]{ transition-delay:.56s }
+[data-anim="delay-8"]{ transition-delay:.64s }
+[data-anim="delay-9"]{ transition-delay:.72s }
+
+/* Responsive */
+@media (max-width:900px){
+	.hero-grid{grid-template-columns:1fr}
+	.why-grid{grid-template-columns:1fr}
+	.contact-grid{grid-template-columns:1fr}
+	.header-inner{flex-direction:column;align-items:flex-start;gap:.5rem}
+	.hero-media img{ max-width:320px; }
+	.hero-decor .fruit{ width:48px; height:48px; }
+	.floating-banner{ display:none }
+	.hero.hero-center{ padding-top:2rem; padding-bottom:2rem; min-height:60vh; }
+	.slide-in::after{ width:64px; height:6px; }
+}

@@ -1,0 +1,50 @@
+:root {
+  --accent: #ff7a18;
+  --accent-2: #fb3066;
+  --muted: #6b6b6b;
+  --card: #ffffff;
+  --success: #16a34a;
+  --error: #ef4444;
+}
+
+.contact-section { padding: 2.5rem 1rem; background: linear-gradient(180deg,#fff7f0,#ffffff); }
+.page-title { text-align:center; font-size:1.6rem; color:#222; margin-bottom:0.25rem; }
+.page-subtitle { text-align:center; color:#555; margin-bottom:1.25rem; font-weight:600; }
+
+.contact-grid {
+  max-width: 980px; margin:0 auto; display:grid; grid-template-columns: 1fr 1fr; gap:1.25rem;
+}
+.contact-info {
+  background: linear-gradient(180deg,#fff8f4,#fff); padding:1.25rem; border-radius:12px;
+  box-shadow:0 8px 30px rgba(30,30,50,0.05); border:1px solid #f3e6e0;
+}
+.contact-info h3 { margin-top:0; }
+.contact-info .note { color:var(--muted); margin-top:0.5rem; }
+
+.contact-form {
+  background:#fff; padding:1.25rem; border-radius:12px; box-shadow:0 8px 30px rgba(20,20,30,0.04);
+  border:1px solid #f0f0f0;
+}
+.contact-form label { display:block; margin-bottom:0.75rem; }
+.contact-form label span { display:block; font-weight:600; margin-bottom:0.35rem; color:#333; }
+.contact-form input, .contact-form textarea {
+  width:100%; padding:0.6rem 0.75rem; border-radius:8px; border:1px solid #ececec;
+  transition:box-shadow .12s, border .12s;
+}
+.contact-form input:focus, .contact-form textarea:focus { outline:none; box-shadow:0 8px 20px rgba(80,80,120,0.06); border-color:var(--accent); }
+
+.form-actions { display:flex; gap:0.75rem; align-items:center; margin-top:0.5rem; }
+.btn-secondary {
+  background: linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff; border:none; padding:0.6rem 0.9rem; border-radius:8px;
+  font-weight:700; cursor:pointer;
+}
+.form-status { font-size:0.95rem; color:var(--muted); }
+
+.alert { padding:0.7rem 1rem; border-radius:8px; margin-bottom:1rem; text-align:center; }
+.alert.success { background: linear-gradient(90deg,#ecfdf5,#e6fffa); color:var(--success); border:1px solid rgba(16,185,129,0.08); }
+.alert.error { background: linear-gradient(90deg,#fff1f2,#fff); color:var(--error); border:1px solid rgba(239,68,68,0.08); }
+
+@media (max-width:880px) {
+  .contact-grid { grid-template-columns: 1fr; }
+  .form-actions { flex-direction:column; align-items:flex-start; gap:0.5rem; }
+}

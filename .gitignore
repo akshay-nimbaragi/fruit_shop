@@ -1,0 +1,32 @@
+# Virtual Environment
+venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Environment variables
+.env
+
+# VS Code settings
+.vscode/
+
+# macOS
+.DS_Store
+
+# Logs
+*.log
+
+# SQLite database (if using SQLite)
+*.db
+
+# Python testing
+.pytest_cache/
+
+# Distribution files
+build/
+dist/
+
+# Coverage reports
+.coverage
+htmlcov/

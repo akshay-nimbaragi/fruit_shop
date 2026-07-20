@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+{% block content %}
+<!-- include page-specific stylesheet -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/order.css') }}">
+
+<section class="container section order-section">
+	<h2 class="page-title">Place an Order</h2>
+
+	{% if success %}
+	<div class="alert success" id="serverSuccess">Thank you! Your order has been received.</div>
+	{% endif %}
+
+	<div class="order-card">
+		<div class="order-left">
+			<form id="orderForm" method="post" novalidate class="form-grid">
+				<label>
+					<span>Customer Name</span>
+					<input type="text" name="name" id="name" required>
+				</label>
+				<label>
+					<span>Mobile Number</span>
+					<input type="tel" name="mobile" id="mobile" pattern="[0-9]{10}" placeholder="10-digit" required>
+					<small class="hint">We'll only use this to confirm delivery</small>
+				</label>
+				<label>
+					<span>Selected Fruit</span>
+					<select name="fruit" id="fruit" required>
+						<option value="">-- Select a fruit --</option>
+						{% for fruit in fruits %}
+						<option value="{{ fruit.id }}" data-price="{{ fruit.price }}" data-name="{{ fruit.name }}" {% if request.args.get('fruit') == fruit.id %}selected{% endif %}>{{ fruit.name }} (₹{{ fruit.price }})</option>
+						{% endfor %}
+					</select>
+				</label>
+				<label>
+					<span>Quantity</span>
+					<input type="number" name="quantity" id="quantity" min="1" value="1" required>
+				</label>
+				<label class="full">
+					<span>Address</span>
+					<textarea name="address" id="address" rows="3" required></textarea>
+				</label>
+
+				<div class="form-actions full">
+					<button type="submit" class="btn btn-primary" id="submitBtn">Submit Order</button>
+				</div>
+			</form>
+		</div>
+
+		<div class="order-right">
+			<div class="fruit-preview" id="fruitPreview">
+				<div class="fruit-emoji" id="fruitEmoji">🍎</div>
+				<div class="fruit-info">
+					<div class="fruit-name" id="fruitName">No fruit selected</div>
+					<div class="fruit-price" id="unitPrice">₹0.00 / unit</div>
+				</div>
+			</div>
+
+			<div class="order-summary">
+				<div class="summary-row">
+					<span>Quantity</span>
+					<span id="summaryQty">1</span>
+				</div>
+				<div class="summary-row">
+					<span>Subtotal</span>
+					<span id="summaryTotal">₹0.00</span>
+				</div>
+				<div class="summary-note">Free delivery for orders above ₹500</div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<!-- page-specific script -->
+<script src="{{ url_for('static', filename='js/order.js') }}"></script>
+{% endblock %}
