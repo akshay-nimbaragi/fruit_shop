@@ -26,5 +26,5 @@ jobs:
           pip install -r requirements.txt
 
       - name: Verify Flask Import
-  run: |
-    python -c "from app import app; print('Flask app loaded successfully!')"
+        run: |
+          python -c "from app import app; print('Flask app loaded successfully!')"
